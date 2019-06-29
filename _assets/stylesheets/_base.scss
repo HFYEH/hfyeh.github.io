@@ -50,29 +50,29 @@ h6 {
 }
 
 h1 {
-  font-size: $base-font-size * 1.6;
+  font-size: $base-font-size * 1.8;
   font-weight: 400;
   letter-spacing: -.03em;
   color: $article-header-title-color;
 }
 
 h2 {
-  font-size: $base-font-size * 1.5;
-  font-weight: 400;
+  font-size: $base-font-size * 1.4;
+  font-weight: 500;
 }
 
 h3 {
-  font-size: $base-font-size * 1.3;
-  font-weight: 500;
+  font-size: $base-font-size * 1.1;
+  font-weight: 600;
 }
 
 h4 {
-  font-size: $base-font-size * 1.1;
-  font-weight: 500;
+  font-size: $base-font-size;
+  font-weight: 600;
 }
 
 h5 {
-  font-size: $base-font-size * 1.17;
+  font-size: $base-font-size * 1.2;
   font-weight: 500;
 }
 
