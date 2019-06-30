@@ -51,7 +51,7 @@ git init --bare project.git # 多人使用(裸裝)
 
 ## Git Commands
 
-### glt clone
+### git clone
 
 {% highlight bash %}
 git clone /var/git/project.git/                                   # 複製本機的 repository
@@ -259,22 +259,6 @@ git ls-remote --tags origin | awk '/^(.*)(s+)(.*[a-zA-Z0-9])$/ {print ":" $2}' |
 git blame filename --date short  # 關於此檔案的所有 commit 紀錄（包含作者、日期、更動的行及其內容）
 {% endhighlight %}
 
-## 建立遠端 branch
-
-滿足條件
-
-1. 須要別人協作自己的 branch
-2. 存在超過一天的分支，想儲存在遠端 repository
-
-{% highlight bash %}
-git checkout -b <branch>        # 建立並切換分支
-git push origin <branch>        # 連結近端 branch 到遠端 branch 並追蹤
-# 修改...
-git commit -am "message"
-git push                        # 會自動儲存到遠端 repository 的該 branch
-# 其他人只要 git pull 就可以同步了
-{% endhighlight %}
-
 ### git stash
 
 正在分支編寫,臨時要去 master 救火
@@ -357,13 +341,18 @@ git submodule update        # clone submodules
 
 可以使用 BFG 或 filter-branch，[BFG](https://rtyley.github.io/bfg-repo-cleaner/)要安裝，[filter-branch](https://help.github.com/articles/removing-sensitive-data-from-a-repository/)較慢
 
-## 大檔尋找
+## 實用技巧
 
-`git ls-tree -r -t -l --full-name HEAD | sort -n -k 4 | tail -n 10`
+### 大檔尋找
 
-`git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch PATH-TO-YOUR-FILE-WITH-SENSITIVE-DATA' --prune-empty --tag-name-filter cat -- --all`
+{% highlight bash %}
+git ls-tree -r -t -l --full-name HEAD | sort -n -k 4 | tail -n 10
 
-## exclude (專屬自己的資料夾，不給別人看的)
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch PATH-TO-YOUR-FILE-WITH-SENSITIVE-DATA' --prune-empty --tag-name-filter cat -- --all
+{% endhighlight %}
+
+### exclude (專屬自己的資料夾，不給別人看的)
+
 {% highlight bash %}
 .git/info/exclude
 experiments/    # exclude folder
@@ -371,7 +360,7 @@ tutorial.mp4    # file
 *.mp4           # all file ended with .mp4
 {% endhighlight %}
 
-## .gitignore (所有 repository 中都有的，要故意忽略的)
+### .gitignore (所有 repository 中都有的，要故意忽略的)
 {% highlight bash %}
 *.log
 {% endhighlight %}
