@@ -8,6 +8,8 @@ tags: [design, jekyll]
 Chalk uses the default Jekyll syntax highlighting gem Rouge. It has a customized style for both light and dark theme.
 Use the `highlight` tag to use the following code highlighting your preferred language:
 
+<!--more-->
+
 {% highlight html %}
 <!-- This is a comment -->
 <div class="grid">
