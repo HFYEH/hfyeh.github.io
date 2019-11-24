@@ -20,8 +20,8 @@ $white: #fff;
 // Font colors
 
 $base-font-color: $gray-lighter;
-$base-accent-color: $gray-lighter;
-$base-accent-highlighted-color: darken($base-accent-color, 15);
+$base-accent-color: #337ab7;
+$base-accent-highlighted-color: darken(#337ab7, 15);
 
 // Border color
 
@@ -34,7 +34,7 @@ $header-logo-color: $white;
 $header-link-color: $gray-light;
 $header-link-color-hover: $white;
 $article-header-title-color: $gray-lightest;
-$article-header-description-color: $gray;
+$article-header-description-color: $gray-light;
 $article-post-titles-color: $gray-lightest;
 $article-footer-color: $gray-dark;
 $article-footer-link-color: $gray-light;

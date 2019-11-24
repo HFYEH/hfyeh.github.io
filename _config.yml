@@ -1,6 +1,6 @@
 # Mandatory settings
 
-blog_theme: dark # Or use dark
+blog_theme: light # Or use dark
 name: Hsueh-Fang Yeh's Blog
 paginate: 10
 url: https://hfyeh.github.io # add your site url (format: https://example.com)
@@ -57,6 +57,7 @@ assets:
     - _assets/javascripts
     - _assets/stylesheets
     - _assets/yarn
+    - _assets/images
 collections:
   my_tags:
     output: true
