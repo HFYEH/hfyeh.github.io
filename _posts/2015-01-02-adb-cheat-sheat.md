@@ -8,7 +8,7 @@ This is a adb commands memo.
 
 <!--more-->
 
-{% highlight bash %}
+```
 android list targets          # Show all android platforms
 
 # AVD Operations
@@ -33,4 +33,4 @@ adb root                      # Get root privilege
 adb logcat -s <tag>           # View log with given tag
 adb forward tcp:5555 tcp:8000 # Port forwarding
 
-{% endhighlight %}
+```

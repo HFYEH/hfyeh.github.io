@@ -10,7 +10,7 @@ tags: [web, rails]
 
 ## 在 development.rb 裡加入寄信的設定
 
-{% highlight yaml %}
+```
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host:"http://localhost:3000" }
   config.action_mailer.smtp_settings = {
@@ -22,13 +22,13 @@ tags: [web, rails]
     :password => "我的密碼",
     :enable_starttls_auto => true
   }
-{% endhighlight %}
+```
 
 ## 建立Mailer寄信程式，並嘗試寄給自己
 
 `rails generate mailer UserMailer notify_comment`
 
-{% highlight ruby %}
+```
 # user_maiiler.rb
 class UserMailer < ActionMailer::Base
   default :from => "我的帳號@gmail.com"
@@ -37,13 +37,13 @@ class UserMailer < ActionMailer::Base
     mail(:to => "我的帳號@gmail.com", :subject => "New Comment")
   end
 end
-{% endhighlight %}
+```
 
 ## 寄信
-{% highlight bash %}
+```
 rails c
 UserMailer.notify_comment.deliver_now!
-{% endhighlight %}
+```
 
 出現錯誤 `Net::SMTPAuthenticationError: 534-5.7.9 Application-specific password required.`
 
