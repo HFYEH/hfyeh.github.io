@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Git cheat sheet"
+title: "Git Cheat Sheet"
 tags: [git]
 ---
 
