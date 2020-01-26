@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Git Cheat Sheet"
-tags: [git]
+tags: [git, cheat-sheet]
 ---
 
 This is a git memo.

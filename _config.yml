@@ -1,7 +1,7 @@
 # Mandatory settings
 
 blog_theme: light # Or use dark
-name: Hsueh-Fang Yeh's Blog
+name: sharefun's Blog
 paginate: 10
 url: https://hfyeh.github.io # add your site url (format: https://example.com)
 
