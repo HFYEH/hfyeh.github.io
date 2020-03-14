@@ -8,7 +8,7 @@ tags: [c]
 
 先從一個問題開始，我用 GCC 編譯以下的程式碼並執行：
 
-<script src="https://gist.github.com/HFYEH/3ab390a5dfbca920a675b75134900e93.js"></script>
+<script src="https://gist.github.com/hfyeh/3ab390a5dfbca920a675b75134900e93.js"></script>
 
 ```shell
 floor(f1), 20 digital points: 2.00000000000000000000
@@ -34,7 +34,7 @@ floor(f2), 20 digital points: 3.00000000000000000000
 
 可以實際執行下列程式確認這點。
 
-<script src="https://gist.github.com/HFYEH/9120ca3a6189e1fdd8f169186fa27690.js"></script>
+<script src="https://gist.github.com/hfyeh/9120ca3a6189e1fdd8f169186fa27690.js"></script>
 
 ```shell
 f1, 6 digital points: 2.999999
