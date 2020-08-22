@@ -10,7 +10,7 @@ tags: [web, rails]
 
 ## 在 development.rb 裡加入寄信的設定
 
-```
+``` ruby
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host:"http://localhost:3000" }
   config.action_mailer.smtp_settings = {
@@ -28,7 +28,7 @@ tags: [web, rails]
 
 `rails generate mailer UserMailer notify_comment`
 
-```
+``` ruby
 # user_maiiler.rb
 class UserMailer < ActionMailer::Base
   default :from => "我的帳號@gmail.com"
@@ -40,7 +40,7 @@ end
 ```
 
 ## 寄信
-```
+``` shell
 rails c
 UserMailer.notify_comment.deliver_now!
 ```

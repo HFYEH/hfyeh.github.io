@@ -10,7 +10,7 @@ This is a git memo.
 
 ## Configuration
 
-```
+``` shell
 git config --global user.name "Username"
 git config --global user.email "email"
 git config --global color.ui true
@@ -29,7 +29,7 @@ git config --global core.autocrlf false # window only project
 
 `--system` 是所有 user
 
-```
+``` shell
 git config --list  # 檢視所有設定
 git config --global alias.co checkout
 git config --global alias.br branch
@@ -44,7 +44,7 @@ git config --global alias.pushall "push --recurse-submodules=on-demand"    # 在
 
 ## 裸裝與平裝的分別
 
-```
+``` shell
 git init project # 單人使用(平裝)
 git init --bare project.git # 多人使用(裸裝)
 ```
@@ -53,7 +53,7 @@ git init --bare project.git # 多人使用(裸裝)
 
 ### git clone
 
-```
+``` shell
 git clone /var/git/project.git/                                   # 複製本機的 repository
 git clone ssh://imroot@127.0.0.1:/var/git/project.git/            # 複製外部的 repository
 git clone -o origin ssh://imroot@127.0.0.1:/var/git/project.git/  # 為遠端 repository 取名
@@ -61,7 +61,7 @@ git clone -o origin ssh://imroot@127.0.0.1:/var/git/project.git/  # 為遠端 re
 
 ### git diff
 
-```
+``` shell
 git diff             # 比較 working directory 與 HEAD
 git diff --cached    # 比較 staging 跟 HEAD
 git diff HEAD^       # 比較 working directory 與 HEAD 前一個 commit
@@ -74,7 +74,7 @@ git diff --since=1.week.ago --until=1.minute.ago
 
 ### git reset
 
-```
+``` shell
 git reset (HEAD)             # 與 git add 功能相反，取消 staging 的狀態回到 unstaging 或 untracked
 git reset (HEAD) filename    # 指定特定檔案從 staging area 狀態回到 unstaging 或 untracked
 
@@ -90,13 +90,13 @@ git reset --hard HEAD^       # 取消最後一個 commit 並且將專案目錄�
 
 ### git revert
 
-```
+``` shell
 git revert <commit>          # 對該 commit 所有更變逆操作，會產生新的 commit
 ```
 
 ### git checkout
 
-```
+``` shell
 git checkout .               # Recover all to HEAD version
 git checkout -- filename     # 回復為 HEAD 中的版本
 git checkout <branch>        # 切換到 branch 分支
@@ -113,7 +113,7 @@ git branch --set-upstream master origin/next   # 把本地的 master 追蹤到 o
 
 ### git remote
 
-```
+``` shell
 git remote -                          # 列出所有遠端 repository 代號 (-v 可看對應的 URL）
 git remote add <name> <address>       # 新增一個遠端 repository
 git remote rm <name>                  # 刪除遠端 repository
@@ -127,7 +127,7 @@ git remote show origin                # 做下列三件事
 ```
 
 ### git fetch
-```
+``` shell
 git fetch origin                  # 抓下及更新 remote repository 所有分支
 git fetch origin <branch>         # 只抓特定分支，取回的分支，在本地命名為 origin/<branch>
 git fetch -prune                  # 更新 remote repository 的同時清理已經被刪除的 remote branch
@@ -137,7 +137,7 @@ git fetch -prune                  # 更新 remote repository 的同時清理已�
 
 - 以 merge 操作
 
-```
+``` shell
 git pull origin <remote_branch>:<branch>    # 完整格式，取回 origin 的 remote_branch 分支，與本地的 branch 合併
 git pull origin <remote_branch>             # 如果要與當前的 branch 合併，可以省略冒號後的 <branch>
 git pull origin                             # 如果當前分支有追蹤某個遠端分支，可以省略遠端分支名
@@ -150,7 +150,7 @@ git pull                                    # 如果當前分支只有唯一的�
 
 - 以 rebase 操作
 
-```
+``` shell
 git pull --rebase
 
 # 會做兩件事
@@ -160,7 +160,7 @@ git pull --rebase
 
 ### git push
 
-```
+``` shell
 git push origin <branch>:<remote_branch>    # 對照 git pull，冒號的意思就是從左邊送到右邊
 git push origin :<remote_branch>            # 因為把準備推上去的 branch 設為空，表示刪除遠端分支（之後用 git fetch -p 刪除本地的 origin/<remote_branch>）
 git push -u origin <branch>                 # 上傳當前分支到遠端 repository，並將 upstream branch origin/<branch>
@@ -177,7 +177,7 @@ Rebase 真正含義
 Rebase 時，先把當前 branch 的最後一個 commit 到 base commit 間的所有 commits 移到暫存資料區，再把 HEAD 指向要被 rebase 的目標（也就是跑了所有的新的 base 的 commit），再將暫存區中的 commit 一一 commit 回來。
 
 假定現在要從某 branch 做 rebase master
-```
+``` shell
 git checkout <branch>           # 切到該 branch
 git rebase master               # 先在本 branch 上跑 master 的 commit，再跑 branch 上的 commit
 git checkout master
@@ -202,7 +202,7 @@ git rebase master server                # 在 client 和 master 後重演 commit
 
 在同一個分支裡跑 rebase 是在更改 commit 順序
 
-```
+``` shell
 # rebase 到 HEAD^
 git rebase -i HEAD^      # 因為 HEAD^ 之後只有一個 commit，故只會有一個 commit 出現，所以其實不會改變順序
 git rebase -i HEAD~3     # 重跑最後三個 commit，會跑出 editor，編輯完後再執行該 editor 的內容
@@ -210,7 +210,7 @@ git rebase -i HEAD~3     # 重跑最後三個 commit，會跑出 editor，編輯
 ```
 
 ### git branch
-```
+``` shell
 git branch                  # 列出目前的 local branch
 git branch -r               # 列出目前的 remote branch
 git branch -a               # 列出目前的 local branch 和 remote branch
@@ -223,7 +223,7 @@ git branch -r --merged      # 列出已經合併的 remote branch
 
 ### git log
 
-```
+``` shell
 git log --pretty=oneline                # 一個 commit 只顯示一行
 git log --oneline -p`                   # 將所有 log 和修改過的檔案內容列出
 git log --oneline --stat --summary      #  查每個版本間的更動檔案和行數
@@ -236,7 +236,7 @@ git log --since=1.day(hour/month).ago   # 只顯示一天（小時/月）以內�
 
 使用時機：每次推向production時使用（除非是用CI）
 
-```
+``` shell
 git tag                               # 檢視所有 tags
 git tag -a v0.0.3 -m "version 0.0.3"  # 加上 tag
 git tag -a v0.0.3 9fceb02 -m "msg"    # 為特定的 commit 增加 tag
@@ -255,7 +255,7 @@ git ls-remote --tags origin | awk '/^(.*)(s+)(.*[a-zA-Z0-9])$/ {print ":" $2}' |
 
 ### git blame
 
-```
+``` shell
 git blame filename --date short  # 關於此檔案的所有 commit 紀錄（包含作者、日期、更動的行及其內容）
 ```
 
@@ -263,7 +263,7 @@ git blame filename --date short  # 關於此檔案的所有 commit 紀錄（包�
 
 正在分支編寫,臨時要去 master 救火
 
-```
+``` shell
 git stash save "message"            # 把目前還沒有 commit 的文件存到暫存區並且將工作目錄復原到最後一次 commit
 
 # 救火完成後...
@@ -291,8 +291,7 @@ git stash pop                       # git stash apply; git stash drop;
 ```
 
 ### git cherry-pick
-```
-
+``` shell
 git cherry-pick 54ea45             # 要把別的branch的特定 commit 複製一份到當前 branch，複製過來的 commit 有不同的 Hash ID
 git cherry-pick --edit 54ea45      # 要寫入不同的 commit message
 git cherry-pick --no-commit 53131s # 拉到 staging area 不要 commit
@@ -304,7 +303,7 @@ git cherry-pick --signoff 54ea45   # 把當前的 user 資訊加進 commit messa
 
 A git repository inside another git repository.
 
-```
+``` shell
 # 將某個 repository 抓下來當成 submodule，資訊會寫在 `.gitmodules`
 git submodule add git@example.com:sub_m.git
 git commit -m "Add sub_m submodule"
@@ -345,7 +344,7 @@ git submodule update        # clone submodules
 
 ### 大檔尋找
 
-```
+``` shell
 git ls-tree -r -t -l --full-name HEAD | sort -n -k 4 | tail -n 10
 
 git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch PATH-TO-YOUR-FILE-WITH-SENSITIVE-DATA' --prune-empty --tag-name-filter cat -- --all
@@ -353,7 +352,7 @@ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch PATH-
 
 ### exclude (專屬自己的資料夾，不給別人看的)
 
-```
+``` shell
 .git/info/exclude
 experiments/    # exclude folder
 tutorial.mp4    # file
@@ -361,7 +360,7 @@ tutorial.mp4    # file
 ```
 
 ### .gitignore (所有 repository 中都有的，要故意忽略的)
-```
+``` shell
 *.log
 ```
 
@@ -369,7 +368,7 @@ tutorial.mp4    # file
 
 ### 若最後一次 commit 後，push 出去之前，有一些小錯誤要修正，想把修改之後的結果放入同一次 commit
 
-```
+``` shell
 git add file-changed
 git commit --amend -m "message"
 git commit -a -m "message"
@@ -377,7 +376,7 @@ git commit -a -m "message"
 
 ### Merge 發生 conflict
 
-```
+``` shell
 git pull     # 在合併時會出錯
 git status   # 該文件會顯示 both modified
 # 修改該文件...
@@ -387,7 +386,7 @@ git push
 
 ### Rebase發生conflict
 
-```
+``` shell
 git fetch
 git rebase   # 預設會去 rebase origin/branch_name
 
@@ -399,14 +398,14 @@ git rebase   # 預設會去 rebase origin/branch_name
 
 ### 要將本來在 repository 的檔案停止追蹤但不刪除
 
-```
+``` shell
 git rm --cached development.log    # 之後再加入.gitignore
 ```
 
 ## Github
 
 ### Fork project workflow
-```
+``` shell
 # How to update your fork
 git remote add upstream <path_to_repo>   # Add remote for upstream (now we have origin, upstream)
 git fetch upstream                       # Fetch changes (fetch from upstream)
@@ -415,7 +414,7 @@ git push origin master                   # Push to your remote
 ```
 
 ### Issue
-```
+``` shell
 git commit -m "This message will show up at issue #1"
 
 # 下述三個，當 commit 被 merge 回 master 時，會關閉 issue

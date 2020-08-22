@@ -10,7 +10,7 @@ tags: [c]
 
 <script src="https://gist.github.com/hfyeh/3ab390a5dfbca920a675b75134900e93.js"></script>
 
-```shell
+``` shell
 floor(f1), 20 digital points: 2.00000000000000000000
 floor(f2), 20 digital points: 3.00000000000000000000
 ```
@@ -36,7 +36,7 @@ floor(f2), 20 digital points: 3.00000000000000000000
 
 <script src="https://gist.github.com/hfyeh/9120ca3a6189e1fdd8f169186fa27690.js"></script>
 
-```shell
+``` shell
 f1, 6 digital points: 2.999999
 f2, 6 digital points: 3.000000
 f1, 20 digital points: 2.99999904632568359375

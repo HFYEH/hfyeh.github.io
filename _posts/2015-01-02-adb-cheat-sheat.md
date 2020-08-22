@@ -8,7 +8,7 @@ This is a adb commands memo.
 
 <!--more-->
 
-```
+``` shell
 android list targets          # Show all android platforms
 
 # AVD Operations

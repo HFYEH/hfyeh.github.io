@@ -11,7 +11,7 @@ This is a command line memo.
 
 ## ls
 
-```
+``` shell
 ls
 # -a: Show all visible and hidden file and directories
 # -l: Long form listing
@@ -23,7 +23,7 @@ ls
 
 ## ag
 
-```
+``` shell
 ag <regex to search> <folder to search>
 # -Q: Literal search
 # -l: List filesname only
@@ -33,7 +33,7 @@ ag <regex to search> <folder to search>
 
 ## cURL
 
-```
+``` shell
 curl
 # -i: Show response information
 # -L: Forwarding redirects
@@ -50,7 +50,7 @@ curl
 ```
 
 ## find
-```
+``` shell
 find . -name '<pattern>': Find files, directories that matches the pattern under current directory
 find . -path '<pattern>': Find flies and directories whose path matches the pattern
 -type f: Find only files
@@ -63,7 +63,7 @@ find . -size +200k: Find files whose size is greater than 200 kB
 ```
 
 ## sed
-```
+``` shell
 sed 's/[aeiou]/*/' <file>: Substituding all [aeiou] by * in file
 sed 's/[aeiou]/*/g' <file>: Global substituding
 sed 's/[aeiou]/*/i' <file>: Case insensitive
@@ -75,12 +75,12 @@ sed ‐n "s/[aeiou]/pw <file>" <file2>: Writing modified content to file2
 ```
 
 ## cat
-```
+``` shell
 -b: Showing line numbers
 ```
 
 ## tree
-```
+``` shell
 -L: Listing layers
 -d: Listing only directories
 ```
