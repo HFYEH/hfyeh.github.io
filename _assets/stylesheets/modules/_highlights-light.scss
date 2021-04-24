@@ -19,13 +19,22 @@
 
 .highlighter-rouge {
   padding: 2px 4px;
-  margin: 30px 0;
+  margin: 0;
   font-size: 16px;
-  color: #d14;
-  background: lighten($gray-lightest, 3);
-  border: 0px solid $base-border-color;
-  border-radius: 1px;
 }
+
+p > .highlighter-rouge {
+  margin: 0;
+  background: darken($gray-lightest, 10);
+  border: 0px solid $base-border-color;
+  border-radius: 2px;
+}
+
+pre > code.hljs {
+  margin: 10px;
+  border-radius: 4px;
+}
+
 
 // Responsive
 // =============================================================================

@@ -21,7 +21,9 @@ tag_nav_enabled: false
 scrollappear_enabled: true # Change to false to disable
 tag_nav_enabled: false # Change to true if you wish to show an additional 'tag-list' navigation below the header
 theme_toggle: false # Change to true if you wish to show an icon in the navigation for dynamic theme toggling
-#markdown: kramdown
+markdown: kramdown
+highlighter: none
+
 social:
   dribbble: # Add your Dribbble handle
   github: hfyeh # Add your GitHub handle

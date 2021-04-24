@@ -20,8 +20,8 @@ $white: #fff;
 // Font colors
 
 $base-font-color: $gray-dark;
-$base-accent-color: #337ab7;
-$base-accent-highlighted-color: darken(#337ab7, 15);
+$base-accent-color: $gray-darkest;
+$base-accent-highlighted-color: #337ab7;
 
 // Border color
 
@@ -36,9 +36,9 @@ $header-link-color-hover: $gray-darkest;
 $article-header-title-color: $gray-darkest;
 $article-header-description-color: $gray-dark;
 $article-post-titles-color: $gray-darkest;
-$article-footer-color: $gray-light;
-$article-footer-link-color: $gray-dark;
-$article-footer-link-color-hover: $gray-darkest;
+$article-footer-color: $gray-dark;
+$article-footer-link-color: $gray-lightest;
+$article-footer-link-color-hover: $gray-lighter;
 $article-paginator-color-hover: $gray-darkest;
 
 // Imports
