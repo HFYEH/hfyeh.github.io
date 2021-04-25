@@ -1,7 +1,7 @@
 # Mandatory settings
 
 blog_theme: light # Or use dark
-name: sharefun's blog
+name: sharefun
 paginate: 10
 url: https://hfyeh.github.io # add your site url (format: https://example.com)
 
@@ -27,7 +27,7 @@ highlighter: none
 social:
   dribbble: # Add your Dribbble handle
   github: hfyeh # Add your GitHub handle
-  linkedin: sharefun # Add your LinkedIn handle
+  linkedin: # Add your LinkedIn handle
   facebook: sharefun010407 # Add your Facebook handle
   flickr: # Add your Flickr handle
   twitter: # Add your Twitter handle
